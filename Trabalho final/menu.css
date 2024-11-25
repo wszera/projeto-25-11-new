@@ -1,0 +1,226 @@
+/* Remove margens e preenchimentos padrão de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que margens e preenchimentos não afetem o tamanho dos elementos */
+}
+
+/* Estiliza links: cor branca, sem sublinhado, com transição suave */
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Muda a opacidade dos links ao passar o mouse */
+a:hover {
+    opacity: 0.7;
+}
+
+/* Estilo da logo: define tamanho e espaçamento à direita */
+.logof {
+    width: 40px; /* Reduz o tamanho para melhor responsividade */
+    height: 40px;
+    margin-right: 8px;
+}
+
+/* Estilo do título: define fonte, maiúsculas e espaçamento entre letras */
+.titulo {
+    color: #fff;
+    font-size: 22px; /* Tamanho ajustado para melhor responsividade */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Contêiner para logo e título: usa flexbox para alinhar lado a lado */
+.logo-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente logo e título */
+}
+
+/* Estilo da barra de navegação: layout flex, centralização e fundo escuro */
+header {
+    background-color: #23232e;
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo da lista de navegação: sem marcadores e layout horizontal */
+.nav-list {
+    list-style: none;
+    display: flex;  /* Garante que a lista fique na horizontal */
+    gap: 2px; /* Espaçamento consistente entre os itens */
+    margin: 0; /* Remove margem para garantir o alinhamento */
+    justify-content: center; /* Alinha os itens no centro */
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+.nav-list li {
+    letter-spacing: 2px;
+}
+
+/* Estilo do ícone de menu móvel: apenas visível em dispositivos menores */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* Linhas do ícone de menu móvel: largura fixa, cor branca, com espaçamento */
+.mobile-menu div {
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+/* Seção sobre a importância do Routiner */
+.about-routiner {
+    background-color: hsl(240, 29%, 97%);
+    padding: 30px;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-routiner h2 {
+    color: #23232e;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.about-routiner p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Estilo para os vídeos na galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajusta para responsividade */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Cartões de vídeo: fundo escuro, bordas arredondadas e sombra */
+.video-card {
+    background-color: #23232e;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+/* Vídeos nos cartões: largura total, altura fixa, bordas arredondadas */
+.video-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Barra de destaque final: altura e cor verde */
+.bordaFinal {
+    height: 4px;
+    background-color: #4CAF50;
+    margin-top: 10px;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Não esconde mais a lista de navegação em dispositivos móveis */
+    .nav-list {
+        display: flex;
+        flex-direction: row; /* Garante que os itens fiquem na horizontal mesmo em telas pequenas */
+        justify-content: space-evenly; /* Distribui os itens de maneira igual ao longo da largura */
+        gap: 15px;
+    }
+
+    /* Mostra o menu móvel apenas em telas muito pequenas */
+    .mobile-menu {
+        display: block;
+    }
+
+    /* Ajustes na seção "about-routiner" para telas menores */
+    .about-routiner {
+        padding: 20px;
+    }
+    
+    .about-routiner h2 {
+        font-size: 1.6em;
+    }
+
+    .about-routiner p {
+        font-size: 1em;
+    }
+
+    /* Ajuste de vídeos para telas menores */
+    .video-card iframe {
+        height: 180px; /* Ajusta a altura do vídeo para telas pequenas */
+    }
+
+    /* Estilo de botões responsivos */
+    button {
+        width: 100%; /* Botões ocupando toda a largura em dispositivos móveis */
+    }
+}
+
+/* Ajustes para dispositivos ainda menores */
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 18px; /* Tamanho da fonte ajustado para telas pequenas */
+        letter-spacing: 2px;
+    }
+
+    .logof {
+        width: 35px; /* Reduz o tamanho da logo em dispositivos muito pequenos */
+        height: 35px;
+    }
+
+    .gallery {
+        gap: 15px; /* Reduz o espaçamento na galeria em telas menores */
+    }
+
+    /* Ajustes na seção "about-routiner" para telas muito pequenas */
+    .about-routiner h2 {
+        font-size: 1.4em;
+    }
+
+    .about-routiner p {
+        font-size: 0.9em;
+    }
+
+    /* Ajusta a altura dos vídeos */
+    .video-card iframe {
+        height: 160px;
+    }
+}
+
+/* Ajuste de layout para telas pequenas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Muda a direção para coluna em dispositivos menores */
+        height: auto;
+        padding: 10px 15px; /* Ajusta o padding */
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        align-items: center;
+    }
+}
